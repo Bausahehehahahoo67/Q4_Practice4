@@ -48,8 +48,12 @@
             break; // stop loop for this click
             }
         }
-    }
-    </script>
 
+        if (attempt_counter >= 3) {
+        alert(denied);
+        document.getElementById("loginBTN").disabled = true; // disable button
+      }
+    }   
+ </script>
 </body>
 </html>
