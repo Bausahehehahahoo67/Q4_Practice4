@@ -12,7 +12,7 @@
             <br>
             <input type="text" id="user" class="form-control" placeholder="Enter here" required>
             <br>
-            
+
         <label for="pw">Password</label>
             <br>
             <input type="password" id="pw" class="form-control" placeholder="Enter here" required>
@@ -24,10 +24,24 @@
     </form>
 
     <script>
-    let username = document.getElementById("user").value;
-    let pwd = document.getElementById("pw").value;
-    let granted = "Welcome " + username + "!";
-    let denied = "Access denied. Account locked after 3 attempts!";
+    let attempts = 0;
+    function authenticate() {
+        let username = document.getElementById("user").value;
+        let pwd = document.getElementById("pw").value;
+        let granted = "Welcome " + username + "!";
+        let denied = "Access denied. Account locked after 3 attempts!";
+
+        while (attempts < 3) {
+            if (username === "M2A2 ODS SA" && pwd === "2444666668888888") {
+                alert(granted);
+                attempts = 0; // reset attempts after successful login
+                document.getElementById("display").innerHTML = "";
+                window.location.href = "dashboard.html";
+
+                break; // stop loop
+            } 
+        }
+    }
     </script>
 
 </body>
