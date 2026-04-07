@@ -12,17 +12,23 @@
             <br>
             <input type="text" id="user" class="form-control" placeholder="Enter here" required>
             <br>
-    </form>
-    <form>
+            
         <label for="pw">Password</label>
             <br>
             <input type="password" id="pw" class="form-control" placeholder="Enter here" required>
             <br>
+
+             <input type="button" name="button" id="loginBTN" value="Login" class="btn btn-info rounded-5" onclick="authenticate()">
+
+             <input type="reset" name="reset" id="cancelBTN" value="Cancel" class="btn btn-info rounded-5" onclick="authenticate()">
     </form>
 
-    <input type="button" name="button" id="loginBTN" value="Login" class="btn btn-info rounded-5" onclick="authenticate()">
-    <input type="reset" name="reset" id="cancelBTN" value="Cancel" class="btn btn-info rounded-5" onclick="authenticate()">
-
+    <script>
+    let username = document.getElementById("user").value;
+    let pwd = document.getElementById("pw").value;
+    let granted = "Welcome " + username + "!";
+    let denied = "Access denied. Account locked after 3 attempts!";
+    </script>
 
 </body>
 </html>
