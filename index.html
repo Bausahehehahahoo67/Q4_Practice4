@@ -40,6 +40,13 @@
 
                 break; // stop loop
             } 
+
+            else{
+            attempts++;
+            document.getElementById("display").innerHTML =
+                "Incorrect username and/or password. Attempt " + attempts + " of 3 ";
+            break; // stop loop for this click
+            }
         }
     }
     </script>
